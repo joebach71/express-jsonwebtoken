@@ -1,5 +1,6 @@
 const app = require('./express');
-const port = process.env.PORT || 8080; // used to create, sign, and verify tokens
+const config = require('./config');
+const port = process.env.PORT || config.port || 8080; // used to create, sign, and verify tokens
 // =======================
 // start the server ======
 // =======================
