@@ -1,7 +1,7 @@
 const express = require('express');
 const apiRoutes = express.Router();
 
-const User = require('../app/models/user');
+const User = require('../models/user');
 
 // route to show a random message (GET http://localhost:8080/api/)
 apiRoutes.get('/', function(req, res) {

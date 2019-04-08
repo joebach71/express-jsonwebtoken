@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../app/models/user');
+const User = require('../models/user');
 // Mongoose save
 const save = (user) => {
   return new Promise((res, rej) => {

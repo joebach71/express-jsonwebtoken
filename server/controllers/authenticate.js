@@ -3,7 +3,7 @@ const config = require('../config');
 // get an instance of the router for api routes
 const routes = express.Router();
 const jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
-const User = require('../app/models/user');
+const User = require('../models/user');
 
 const setPayload = (req) => {
   return { admin: user.admin };
