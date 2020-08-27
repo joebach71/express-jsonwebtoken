@@ -19,15 +19,8 @@ app.use(morgan('dev'));
 const { validateToken } = require('./middlewares/token');
 app.use(validateToken);
 //
-// routers/controllers
-// apply the routes to our application with the prefix /api
-const registration = require('./controllers/registration');
-const apis = require('./controllers/apis');
-const authenticate = require('./controllers/authenticate');
-const index = require('./controllers/index');
-app.use('/api', apis);
-app.use('/register', registration);
-app.use('/authenticate', authenticate);
+const index = require('./routers/index');
+// main router
 app.use('/', index);
 
 module.exports = app;

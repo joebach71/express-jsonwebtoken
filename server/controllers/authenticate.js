@@ -1,7 +1,4 @@
-const express = require('express');
 const config = require('../config');
-// get an instance of the router for api routes
-const routes = express.Router();
 const jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const User = require('../models/user');
 
@@ -9,8 +6,8 @@ const setPayload = (req) => {
   return { admin: user.admin };
 }
 
-// route to authenticate a user (POST http://localhost:8080/api/authenticate)
-routes.post('/', async (req, res) => {
+// controller to authenticate a user (POST http://localhost:8080/api/authenticate)
+const authenticate = async (req, res) => {
   // find the user
   try {
     // console.log(await User.find({}));
@@ -43,6 +40,7 @@ routes.post('/', async (req, res) => {
     console.log(err);
     res.status(500).json({ success: false, error: err });
   }
-});
+};
 
-module.exports = routes;
+const authenticateControllers = { authenticate }
+module.exports = authenticateControllers;

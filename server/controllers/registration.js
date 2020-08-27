@@ -1,7 +1,5 @@
-const express = require('express');
-const router = express.Router();
-
 const User = require('../models/user');
+
 // Mongoose save
 const save = (user) => {
   return new Promise((res, rej) => {
@@ -17,6 +15,11 @@ const save = (user) => {
 // Register 
 const register = async (req, res, next) => {
   // create user account
+  // const newUser = new User({
+  //   name: req.param.name,
+  //   password: req.param.password,
+  //   admin: req.param.admin
+  // })
   // create a sample user
   const nick = new User({ 
     name: 'joepark71', 
@@ -34,7 +37,5 @@ const register = async (req, res, next) => {
     res.status(500).json({ success: false });
   });
 }
-
-router.get('/', register);
-
-module.exports = router;
+const registrationController = { register }
+module.exports = registrationController;
